@@ -1,9 +1,9 @@
-package com.sal3awy.movieapp.module.movielist.data
+package com.sal3awy.movieapp.module.movielist.data.model
 
 import com.google.gson.annotations.SerializedName
 
 
-data class Movie(
+data class MovieModel(
     @SerializedName("poster_path") var posterPath: String? = null,
     @SerializedName("adult") var adult: Boolean? = null,
     @SerializedName("overview") var overview: String? = null,
