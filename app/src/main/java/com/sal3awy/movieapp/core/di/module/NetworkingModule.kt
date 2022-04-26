@@ -1,4 +1,4 @@
-package com.sal3awy.movieapp.core.di
+package com.sal3awy.movieapp.core.di.module
 
 import com.sal3awy.movieapp.BuildConfig.API_URL
 import dagger.Module
@@ -32,7 +32,7 @@ object NetworkingModule {
 
     @Singleton
     @Provides
-    fun provideOkHttpClient() = HttpLoggingInterceptor().apply {
+    fun provideHttpLoggingInterceptor() = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
     }
 }

@@ -3,6 +3,7 @@ package com.sal3awy.movieapp.module.movielist.di
 import com.sal3awy.movieapp.module.movielist.data.repository.MoviesRepositoryImpl
 import com.sal3awy.movieapp.module.movielist.data.source.remote.MoviesService
 import com.sal3awy.movieapp.module.movielist.domain.repository.MoviesRepository
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,7 +21,7 @@ abstract class MoviesModule {
         fun provideMoviesService(retrofit: Retrofit) = retrofit.create(MoviesService::class.java)
     }
 
-    @Provides
+    @Binds
     @ViewModelScoped
-    abstract fun provideMoviesRepository(impl: MoviesRepositoryImpl): MoviesRepository
+    abstract fun bindMoviesRepository(impl: MoviesRepositoryImpl): MoviesRepository
 }

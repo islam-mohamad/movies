@@ -13,7 +13,7 @@ class GetMoviesListUseCase @Inject constructor(private val repository: MoviesRep
         return with(param) {
             when {
                 page < 1 -> Single.error(InvalidPageNumberException())
-                limit in 11 downTo 4 -> Single.error(InvalidLimitException())
+                limit < 5 -> Single.error(InvalidLimitException())
                 else -> repository.getMoviesList(page, limit)/*.flatMapPublisher {
                     Flowable.just(it)
                 }.flatMapIterable {
